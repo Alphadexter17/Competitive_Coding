@@ -1,0 +1,28 @@
+In this code we have given a array of size n and a character array of size n . Depending upon the number in integer array we have to display the character array and sort it for example: 
+int arr[5]={10,2,3,4,8};
+char arr2[5]={'a','b','c','d','e'};
+Therefore the number 10 represents a , 2 represents b and 3 represents c and so on. There fore after sorting int arr[5] we get output as {2,3,4,8,10} therefore as 2 repsents b and c 
+repsents 3 and so on the following ouput should be b c d e a. 
+
+#include<iostream>
+#include<utility>
+using namespace std;
+void pair_sort(int arr[],char b[], int n)   
+{
+    pair<int ,char> pa[n];    // creating an array of pair integer and character 
+    for(int i=0;i<n;i++)
+    {
+        pa[i]=make_pair(arr[i],b[i]);   // inputing the integer from arr[] and character from b[]
+    }
+    sort(pa,pa+n);    //sorting the following pair according the numbers . Sorting is always done according the first of the pair 
+    for(int i=0;i<n;i++)
+    {
+        cout<<pa[i].second<<" ";   //displaying the second in the pair i.e characters only   
+    }
+}
+int main()
+{
+    int arr[5]={10,2,3,7,9};
+    char arr2[5]={'a','b','c','d','e'};
+    pair_sort(arr,arr2,5);
+}   
