@@ -1,0 +1,28 @@
+#include<cstdint> //header file to create a vector of 64 bit size 
+#include<vector>
+#include<iostream>
+#include<algorithm> //header file which includes min and max functions which 
+using namespace std;  //calulate min and max of a vector syntax below
+int main()
+{
+    vector<int64_t> v1;
+    vector<int64_t> v2;  //creates vector of each element having size of 64 bit
+    long long int num;
+    for(int i=0;i<5;i++)
+    {
+        cin>>num;
+        v1.push_back(num);
+    }
+    for(int i=0;i<5;i++)
+    {
+        long long int sum=0;
+        for(int j=0;j<5;j++)
+        {
+            if(i!=j)
+            sum=sum+v1[j]; 
+        }
+        v2.push_back(sum);
+    }
+    cout<<*min_element(v2.begin(),v2.end())<<" "<<*max_element(v2.begin(),v2.end());  //displaying min and max of an vector using this syntax
+    return 0;
+}
